@@ -14,9 +14,9 @@ var app     = express();
 var port    = 3000;
 
 //Connessione server MongoDB
-mongoose.connect("mongodb://ds135186.mlab.com:35186/meantut");
+mongoose.connect("mongodb://miccel:miccelscrauso21@ds135186.mlab.com:35186/meantut");
 
-//Verifico la connessione al Database MongoDO
+//Verifico la connessione al Database MongoDB
 
 mongoose.connection.on("connect", ()=>{
     console.log("Connessione al Database effettuata passando per la porta 35186");
