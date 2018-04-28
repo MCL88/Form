@@ -1,16 +1,21 @@
 const express      =        require("express");
 const router       =        express.Router();
 
-router.get("/add_proposal", (req, res, next) => {
-    res.send("Ritrovata la lista canditatura");
+const Candidate    =        require("../models/candidates");
+
+router.get("/candidate", (req, res, next) => {
+ //   res.send("Ritrovata la lista canditatura");
+    Candidate.find((err, candidates) =>{
+        res.json(candidates);
+    });
 });
 
-router.post("/add_proposal", (req, res, next) => {
+router.post("/candidate", (req, res, next) => {
     //aggiungi
 });
 
-router.delete("/add_proposal/:id", (req, res, next) => {
-    //elimina proposta di lavoro
+router.delete("/candidate/:id", (req, res, next) => {
+    //elimina candidato
 });
 
 

@@ -13,7 +13,19 @@ var app     = express();
 //Porta del server NodeJS
 var port    = 3000;
 
+//Connessione server MongoDB
+mongoose.connect("mongodb://ds135186.mlab.com:35186/meantut");
 
+//Verifico la connessione al Database MongoDO
+
+mongoose.connection.on("connect", ()=>{
+    console.log("Connessione al Database effettuata passando per la porta 35186");
+});
+mongoose.connection.on("error", (err)=>{
+    if(err){
+        console.log("Errore MongoDB: ", err);
+    }
+});
 
 //Aggiunta middleware
 app.use(cors());
