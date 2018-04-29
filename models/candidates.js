@@ -5,10 +5,6 @@ const mongoose      =       require("mongoose");
 //Mongoose è un wrapper utile per gestire le entry in MongoDB
 
 const CandidateSchema = mongoose.Schema({
-    candidate_id:{
-        type: String,
-        required: true
-    },
     candidate_name:{
         type: String,
         required: true
@@ -29,19 +25,19 @@ const CandidateSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    education:{
-        type: String,
+    candidate_education:{
+        type: Number,
         required: true
     },
-    carrers:{
-        type: String,
+    candidate_career:{
+        type: Number,
         required: true
     },
-    carrer_location:{
-        type: String,
+    candidate_location:{
+        type: Number,
         required: true
     },
 });
 
 //Esporto lo Schema Candidati
-const Candidate = model.exports = mongoose.exports("Canditate", CandidateSchema)
+const Candidate = module.exports = mongoose.model("Canditate", CandidateSchema);
