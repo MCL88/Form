@@ -1,4 +1,15 @@
 <div class="container">
+  <div *ngFor="let candidate of candidates">
+      <div class="col-md-3">
+        {{candidate.candidate_name}}
+      </div>
+      <div class="col-md-3">
+        {{candidate.candidate_surname}}
+      </div>
+      <div class="col-md-3">
+        {{candidate.candidate_age}}
+      </div>
+  </div>
 	<div class="row">
     <div class="col-md-push-3 col-md-6">
 		  <div class="form_main">
