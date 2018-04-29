@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MCL88/Form#readme",
   "dependencies": {
+    "@angular/cli": "^1.7.4",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
