@@ -30,7 +30,28 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     this.candidateService.getCandidates()
     .subscribe(candidates => this.candidates = candidates);
-    console.log(this.candidates);
+  }
+
+  deleteCandidate(id: any)
+  {
+    let candidates = this.candidates;
+    console.log(id);
+    this.candidateService.eliminateCandidate(id)
+    .subscribe(data => {
+//Se l'elemento del database è stato cancellato
+        if(data.n == 1)
+        {
+//Controllo l'array verifico quale elemento eliminare
+          for(var i = 0; i < candidates.length; i++)
+          {
+            if(candidates[i]._id == id)
+            {
+              candidates.splice(i,1);
+            }
+          }
+        }
+    });
+    console.log(candidates);
   }
 
 }
