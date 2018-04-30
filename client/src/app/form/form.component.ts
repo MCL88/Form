@@ -23,7 +23,9 @@ export class FormComponent implements OnInit {
   candidate_career            :   number;
   candidate_location          :   number;
 
-  constructor(private candidateService : CandidatesService) { }
+  constructor(private candidateService : CandidatesService) {
+
+   }
 
   ngOnInit() {
     this.candidateService.getCandidates()

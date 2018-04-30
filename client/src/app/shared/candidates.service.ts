@@ -17,7 +17,7 @@ export class CandidatesService {
   //Ottengo i contatti salvati sul DB
   getCandidates() {
     return this.http.get("http://localhost:3000/api/candidate")
-    .map(res => {res.json()});
+    .map(res => {res.json(); console.log(res.json())});
   }
 
   addCandidate(newCandidate){
@@ -28,7 +28,7 @@ export class CandidatesService {
   }
 
   eliminateCandidate(id){
-    return this.http.delete("http://localhost:3000/api/candidate"+id)
+    return this.http.delete("http://localhost:3000/api/candidate/"+id)
     .map(res =>{res.json()});
   }
 
